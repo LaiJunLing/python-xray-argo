@@ -104,10 +104,11 @@ if [ "$MODE_CHOICE" = "1" ]; then
     sed -i "s/UUID = os.environ.get('UUID', '[^']*')/UUID = os.environ.get('UUID', '$UUID_INPUT')/" app.py
     echo -e "${GREEN}UUID 已设置为: $UUID_INPUT${NC}"
 
-    read -p "请输入新的 节点名称 (留空自动生成): " NAME_INPUT
+    echo -e "请输入新的节点名称"
+    read -p "请输入新的节点名称 (留空自动生成): " NAME_INPUT
     if [ -z "$NAME_INPUT" ]; then
         NAME_INPUT='Agedmonk'
-        echo -e "${GREEN}自动生成UUID: $NAME_INPUT${NC}"
+        echo -e "${GREEN}自动生成节点名称: $NAME_INPUT${NC}"
     fi
     sed -i "s/NAME = os.environ.get('NAME', '[^']*')/NAME = os.environ.get('NAME', '$NAME_INPUT')/" app.py
     echo -e "${GREEN}节点名称已设置为: $NAME_INPUT${NC}"
