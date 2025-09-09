@@ -113,8 +113,8 @@ if [ "$MODE_CHOICE" = "1" ]; then
     sed -i "s/NAME = os.environ.get('NAME', '[^']*')/NAME = os.environ.get('NAME', '$NAME_INPUT')/" app.py
     echo -e "${GREEN}节点名称已设置为: $NAME_INPUT${NC}"
 
-    sed -i "s/CFIP = os.environ.get('CFIP', '[^']*')/CFIP = os.environ.get('CFIP', 'www.visa.com')/" app.py
-    echo -e "${GREEN}优选IP已自动设置为: www.visa.com${NC}"
+    sed -i "s/CFIP = os.environ.get('CFIP', '[^']*')/CFIP = os.environ.get('CFIP', 'myanmar.visa.com')/" app.py
+    echo -e "${GREEN}优选IP已自动设置为: myanmar.visa.com${NC}"
     
     echo
     echo -e "${GREEN}极速配置完成！正在启动服务...${NC}"
@@ -150,7 +150,7 @@ else
     echo -e "${YELLOW}当前优选IP: $(grep "CFIP = " app.py | cut -d"'" -f4)${NC}"
     read -p "请输入优选IP/域名 (留空使用默认缅甸): " CFIP_INPUT
     if [ -z "$CFIP_INPUT" ]; then
-        CFIP_INPUT=myanmar.visa.com"
+        CFIP_INPUT="myanmar.visa.com"
     fi
     sed -i "s/CFIP = os.environ.get('CFIP', '[^']*')/CFIP = os.environ.get('CFIP', '$CFIP_INPUT')/" app.py
     echo -e "${GREEN}优选IP已设置为: $CFIP_INPUT${NC}"
