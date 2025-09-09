@@ -52,10 +52,10 @@ PROJECT_DIR="python-xray-argo"
 if [ ! -d "$PROJECT_DIR" ]; then
     echo -e "${BLUE}下载完整仓库...${NC}"
     if command -v git &> /dev/null; then
-        git clone https://github.com/laijunling/python-xray-argo.git
+        git clone https://github.com/eooce/python-xray-argo.git
     else
         echo -e "${YELLOW}Git未安装，使用wget下载...${NC}"
-        wget -q https://github.com/laijunling/python-xray-argo/archive/refs/heads/main.zip -O python-xray-argo.zip
+        wget -q https://github.com/eooce/python-xray-argo/archive/refs/heads/main.zip -O python-xray-argo.zip
         if command -v unzip &> /dev/null; then
             unzip -q python-xray-argo.zip
             mv python-xray-argo-main python-xray-argo
