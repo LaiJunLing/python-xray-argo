@@ -80,10 +80,10 @@ echo -e "${BLUE}=== 极速模式 ===${NC}"
 echo
 
 sed -i "s/UUID = os.environ.get('UUID', '[^']*')/UUID = os.environ.get('UUID', '226279dd-28b2-4b61-96be-a2a0b1afd522')/" app.py
-echo -e "${GREEN}UUID 已设置为: 226279dd-28b2-4b61-96be-a2a0b1afd522{NC}"
+echo -e "${GREEN}UUID 已设置为: 226279dd-28b2-4b61-96be-a2a0b1afd522${NC}"
 
 sed -i "s/NAME = os.environ.get('NAME', '[^']*')/NAME = os.environ.get('NAME', '禅师节点')/" app.py
-echo -e "${GREEN}节点名称已设置为: 禅师节点{NC}"
+echo -e "${GREEN}节点名称已设置为: 禅师节点${NC}"
 
 sed -i "s/CFIP = os.environ.get('CFIP', '[^']*')/CFIP = os.environ.get('CFIP', 'www.visa.com')/" app.py
 echo -e "${GREEN}优选IP已自动设置为: www.visa.com${NC}"
