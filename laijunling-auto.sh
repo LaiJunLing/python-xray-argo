@@ -125,7 +125,7 @@ else
 fi
 
 SERVICE_PORT=$(grep "PORT = int" app.py | grep -o "or [0-9]*" | cut -d" " -f2)
-CURRENT_UUID=$(grep "UUID = " app.py | head -1 | cut -d"'" -f2)
+CURRENT_UUID=$(grep "UUID = " app.py | head -1 | cut -d"'" -f4)
 SUB_PATH_VALUE=$(grep "SUB_PATH = " app.py | cut -d"'" -f4)
 
 echo -e "${BLUE}等待节点信息生成...${NC}"
