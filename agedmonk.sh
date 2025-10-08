@@ -94,7 +94,7 @@ if [ "$MODE_CHOICE" = "1" ]; then
     echo -e "${BLUE}=== 极速模式 ===${NC}"
     echo
     
-    echo -e "${YELLOW}当前UUID: $(grep "UUID = " app.py | head -1 | cut -d"'" -f2)${NC}"
+    echo -e "${YELLOW}当前UUID: $(grep "UUID = " app.py | head -1 | cut -d"'" -f4)${NC}"
     read -p "请输入新的 UUID (留空自动生成): " UUID_INPUT
     if [ -z "$UUID_INPUT" ]; then
         UUID_INPUT=$(generate_uuid)
@@ -124,7 +124,7 @@ else
     echo -e "${BLUE}=== 完整配置模式 ===${NC}"
     echo
     
-    echo -e "${YELLOW}当前UUID: $(grep "UUID = " app.py | head -1 | cut -d"'" -f2)${NC}"
+    echo -e "${YELLOW}当前UUID: $(grep "UUID = " app.py | head -1 | cut -d"'" -f4)${NC}"
     read -p "请输入新的 UUID (留空自动生成): " UUID_INPUT
     if [ -z "$UUID_INPUT" ]; then
         UUID_INPUT=$(generate_uuid)
@@ -257,7 +257,7 @@ else
 fi
 
 echo -e "${YELLOW}=== 当前配置摘要 ===${NC}"
-echo -e "UUID: $(grep "UUID = " app.py | head -1 | cut -d"'" -f2)"
+echo -e "UUID: $(grep "UUID = " app.py | head -1 | cut -d"'" -f4)"
 echo -e "节点名称: $(grep "NAME = " app.py | head -1 | cut -d"'" -f4)"
 echo -e "服务端口: $(grep "PORT = int" app.py | grep -o "or [0-9]*" | cut -d" " -f2)"
 echo -e "优选IP: $(grep "CFIP = " app.py | cut -d"'" -f4)"
